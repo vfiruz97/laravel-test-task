@@ -9,3 +9,6 @@ Steps:
 ## Commands
 
 - php artisan send:email_to_subscribers // Send email to subscribers
+
+
+Open API documentation that you can find at root - test-task.postman_collection.json.
