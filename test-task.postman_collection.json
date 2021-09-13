@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "303a22cf-3769-4ccb-9993-034c26eafe9f",
+		"name": "test-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "test.loc/api/post?web_site_id=1&title=Test Article&description=Test article description&published_at=2021-09-13 13:33",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"api",
+						"post"
+					],
+					"query": [
+						{
+							"key": "web_site_id",
+							"value": "1"
+						},
+						{
+							"key": "title",
+							"value": "Test Article"
+						},
+						{
+							"key": "description",
+							"value": "Test article description"
+						},
+						{
+							"key": "published_at",
+							"value": "2021-09-13 13:33"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "test.loc/api/subscribe?web_site_id=2&email=test@test.test",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"api",
+						"subscribe"
+					],
+					"query": [
+						{
+							"key": "web_site_id",
+							"value": "2"
+						},
+						{
+							"key": "email",
+							"value": "test@test.test"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
