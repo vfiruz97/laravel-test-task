@@ -15,6 +15,10 @@ class CreateMailingJobsTable extends Migration
     {
         Schema::create('mailing_jobs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('subscriber_id');
+            $table->foreignId('post_id');
+            $table->string('status');
+            $table->timestamp('sent_at');
             $table->timestamps();
         });
     }
