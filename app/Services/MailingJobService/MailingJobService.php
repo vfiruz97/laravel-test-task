@@ -13,11 +13,10 @@ class MailingJobService extends MailingJobSeviceContact
     protected $subscriberService;
     protected $mailingJobRepository;
 
-    public function __construct(SubscriberService $subscriber_service ,MailingJobRepository $mailing_job_repository)
+    public function __construct(SubscriberService $subscriber_service, MailingJobRepository $mailing_job_repository)
     {
         $this->subscriberService = $subscriber_service;
         $this->mailingJobRepository = $mailing_job_repository;
-       
     }
 
     public function create(array $mailing_job)
@@ -29,7 +28,7 @@ class MailingJobService extends MailingJobSeviceContact
     {
         $subscribers = $this->subscriberService->getSubscribersByWebSiteId($post->web_site_id);
 
-        foreach($subscribers as $subscriber){
+        foreach ($subscribers as $subscriber) {
             $data = [
                 'email_to' => $subscriber->email,
                 'post_id' => $post->id,
@@ -37,5 +36,10 @@ class MailingJobService extends MailingJobSeviceContact
             ];
             $this->create($data);
         }
+    }
+
+    public function getJobsInStatus(string $status)
+    {
+        return $this->mailingJobRepository->getJobsInStatus($status);
     }
 }

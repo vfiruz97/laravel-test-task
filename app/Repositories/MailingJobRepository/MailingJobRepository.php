@@ -18,4 +18,9 @@ class MailingJobRepository extends MailingJobRepositoryContact
     {
         return $this->mailingJob->create($post);
     }
+
+    public function getJobsInStatus(string $status)
+    {
+        return $this->mailingJob->where('status', $status)->get();
+    }
 }
